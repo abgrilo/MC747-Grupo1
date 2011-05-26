@@ -1,0 +1,1 @@
+rails generate scaffold Cliente cpf:string nome:string data_nascimento:date cep:string complemento:string ddd:string telefone:string email:string
