@@ -3,5 +3,6 @@ class WelcomeController < ApplicationController
   end
 
   def login
+    redirect_to :controller => :produtos, :action => :index
   end
 end

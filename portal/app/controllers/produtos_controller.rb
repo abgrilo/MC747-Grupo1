@@ -95,4 +95,8 @@ class ProdutosController < ApplicationController
       format.xml  { render :xml => @produtos }
     end
   end
+  
+  def comprar
+    
+  end
 end

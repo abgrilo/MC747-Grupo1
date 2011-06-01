@@ -1,5 +1,16 @@
 Portal::Application.routes.draw do
+  resources :produtos do
+    collection do
+        get 'buscar_produto'
+        post 'efetua_busca'
+    end
+    member do
+      get 'comprar'
+    end
+  end
+
   root :to => 'welcome#index'
+  match 'welcome' => 'welcome#index'
   match 'login_welcome' => 'welcome#login', :as => :login_welcome
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,5 +68,5 @@ Portal::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   
-  match ':controller(/:action(/:id(.:format)))'
+#  match ':controller(/:action(/:id(.:format)))'
 end
