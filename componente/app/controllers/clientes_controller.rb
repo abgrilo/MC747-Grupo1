@@ -13,6 +13,8 @@ class ClientesController < ApplicationController
   # GET /clientes/1
   # GET /clientes/1.xml
   def show
+    id = params[:id]
+    cpf_consulta = id[id.length-1..id.length]
     consulta = Cliente.where(:cpf => params[:id])
     if consulta.present?
       @cliente = consulta[0]
